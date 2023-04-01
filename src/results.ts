@@ -21,8 +21,8 @@ interface IResult {
   matchId: number
 }
 
-export async function getResults(): Promise<IResult[]> {
-  const url = `${CONFIG.BASE}/${CONFIG.RESULTS}`
+export async function getResults(a = 0): Promise<IResult[]> {
+  const url = `${CONFIG.BASE}/${CONFIG.RESULTS}?offset=${a}`
 
   try {
     const body = await (
